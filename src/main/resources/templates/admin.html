@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Admin</title>
+    </head>
+    <body>
+    	<tr th:each="customer : ${customers}">
+        	<td th:text="${customer.id}"></td>
+        	<td th:text="${customer.firstName}"></td>
+        	<td th:text="${customer.lastName}"></td>
+    	</tr>
+    	<a th:href="@{/home}">Back</a>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+    </body>
+</html>
